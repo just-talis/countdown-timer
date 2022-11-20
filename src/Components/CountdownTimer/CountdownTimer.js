@@ -1,6 +1,9 @@
 const CountdownTimer = () => {
   return (
-  <span>Hello world</span>
+    <div className="count">
+        <span></span>
+    </div>
+  
   );
 };
 
