@@ -1,0 +1,15 @@
+.countdown {
+    width: 600px;
+    height: 100px;
+    border: 2px solid black;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown span {
+    margin-right: 5px;
+    margin-left: 5px;
+}

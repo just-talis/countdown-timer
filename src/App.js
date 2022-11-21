@@ -4,7 +4,9 @@ import CountdownTimer from './Components/CountdownTimer/CountdownTimer';
 function App() {
   return (
     <div className="App">
-      <CountdownTimer/>
+      <CountdownTimer
+      countdownMs={1693526400}
+      />
     </div>
   );
 }
