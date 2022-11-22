@@ -23,16 +23,25 @@ const CountdownTimer = ({countdownMs}) => {
    setRemainingTime(getRemainingTimeUtils(countdown));
   }
   return (
-    <div className="countdown">
-      <span>{remainingTime.days}</span>
+    <main className="countdown">
+        <div>
+        <span>{remainingTime.days}</span>
       <span>Days</span>
-      <span>{remainingTime.hours}</span>
+        </div>
+    <div>
+    <span>{remainingTime.hours}</span>
       <span>Hours</span>
-      <span>{remainingTime.minutes}</span>
+    </div>
+     <div>
+     <span>{remainingTime.minutes}</span>
       <span>Minutes</span>
+     </div>
+      <div>
       <span>{remainingTime.seconds}</span>
       <span>Seconds</span>
-    </div>
+      </div>
+      
+    </main>
   );
 };
 

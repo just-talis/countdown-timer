@@ -9,7 +9,6 @@
     justify-content: center;
 }
 
-.countdown span {
-    margin-right: 5px;
-    margin-left: 5px;
+.countdown div {
+   margin: 10px;
 }
