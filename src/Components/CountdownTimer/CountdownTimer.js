@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {getRemainingTimeUtils} from './Utils/CountdownTimerUtils'
+import { getRemainingTimeUtils } from "./Utils/CountdownTimerUtils";
 import "./CountdownTimer.css";
 
 const defaultRemainingTime = {
@@ -9,7 +9,7 @@ const defaultRemainingTime = {
   seconds: "00",
 };
 
-const CountdownTimer = ({countdownMs}) => {
+const CountdownTimer = ({ countdownMs }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
   useEffect(() => {
@@ -20,27 +20,50 @@ const CountdownTimer = ({countdownMs}) => {
   }, [countdownMs]);
 
   function updateRemainingTime(countdown) {
-   setRemainingTime(getRemainingTimeUtils(countdown));
+    setRemainingTime(getRemainingTimeUtils(countdown));
   }
   return (
-    <main className="countdown">
-        <div>
-        <span>{remainingTime.days}</span>
-      <span>Days</span>
-        </div>
-    <div>
-    <span>{remainingTime.hours}</span>
-      <span>Hours</span>
-    </div>
-     <div>
-     <span>{remainingTime.minutes}</span>
-      <span>Minutes</span>
-     </div>
-      <div>
-      <span>{remainingTime.seconds}</span>
-      <span>Seconds</span>
+    <main className="container">
+      <div className="stars">
+        <img src="./images/bg-stars.svg" alt=""></img>
       </div>
-      
+      <h1>we're launching soon</h1>
+      <div className="countdown">
+        <div>
+          <p id="days">{remainingTime.days}</p>
+          <span>Days</span>
+        </div>
+        <div>
+          <p id="hours">{remainingTime.hours}</p>
+          <span>Hours</span>
+        </div>
+        <div>
+          <p id="minutes">{remainingTime.minutes}</p>
+          <span>Minutes</span>
+        </div>
+        <div>
+          <p id="seconds">{remainingTime.seconds}</p>
+          <span>Seconds</span>
+        </div>
+      </div>
+
+      <div className="socials">
+        <ul>
+          <li>
+            <img src="./images/icon-facebook.svg" alt=""></img>
+          </li>
+          <li>
+            <img src="./images/icon-pinterest.svg" alt=""></img>
+          </li>
+          <li>
+            <img src="./images/icon-instagram.svg" alt=""></img>
+          </li>
+        </ul>
+      </div>
+
+      <div className="hills">
+        <img src="./images/pattern-hills.svg" alt=""></img>
+      </div>
     </main>
   );
 };
