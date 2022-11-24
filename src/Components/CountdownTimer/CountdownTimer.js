@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { getRemainingTimeUtils } from "./Utils/CountdownTimerUtils";
 import "./CountdownTimer.css";
+import FbIcon from '../../images/icon-facebook.svg'
+import PiIcon from '../../images/icon-pinterest.svg'
+import IgIcon from '../../images/icon-instagram.svg'
 
 const defaultRemainingTime = {
   days: "00",
@@ -24,9 +27,8 @@ const CountdownTimer = ({ countdownMs }) => {
   }
   return (
     <main className="container">
-      <div className="stars">
-        <img src="./images/bg-stars.svg" alt=""></img>
-      </div>
+      <div className="stars"></div>
+      <div className="hills"></div>
       <h1>we're launching soon</h1>
       <div className="countdown">
         <div>
@@ -50,19 +52,15 @@ const CountdownTimer = ({ countdownMs }) => {
       <div className="socials">
         <ul>
           <li>
-            <img src="./images/icon-facebook.svg" alt=""></img>
+            <img src={FbIcon} alt=""></img>
           </li>
           <li>
-            <img src="./images/icon-pinterest.svg" alt=""></img>
+            <img src={PiIcon} alt=""></img>
           </li>
           <li>
-            <img src="./images/icon-instagram.svg" alt=""></img>
+            <img src={IgIcon} alt=""></img>
           </li>
         </ul>
-      </div>
-
-      <div className="hills">
-        <img src="./images/pattern-hills.svg" alt=""></img>
       </div>
     </main>
   );
