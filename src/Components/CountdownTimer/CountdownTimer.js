@@ -26,10 +26,10 @@ const CountdownTimer = ({ countdownMs }) => {
     setRemainingTime(getRemainingTimeUtils(countdown));
   }
   return (
+    <>
     <main className="container">
-      <div className="stars"></div>
-      <div className="hills"></div>
-      <h1>we're launching soon</h1>
+    <h1>we're launching soon</h1>
+
       <div className="countdown">
         <div>
           <p id="days">{remainingTime.days}</p>
@@ -62,7 +62,9 @@ const CountdownTimer = ({ countdownMs }) => {
           </li>
         </ul>
       </div>
+
     </main>
+    </>
   );
 };
 

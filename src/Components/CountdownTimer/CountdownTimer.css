@@ -12,16 +12,6 @@ ul {
     list-style-type: none;
 }
 
-.hills {
-    position: absolute;
-    background-image: url('../../images/pattern-hills.svg');
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-}
-
 body {
     font-family: "Red Hat Text", sans-serif;
     background-image: url('../../images/bg-stars.svg'), linear-gradient(hsl(235, 16%, 14%),#211A29);
@@ -32,15 +22,18 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 70vh;
+    position: relative;
+    height: 100%;
 }
 
-.container h1 {
+h1 {
     font-size: 20px;
     color: white;
     letter-spacing: 5px;
-    margin-bottom: 50px;
     text-transform: uppercase;
+    position: absolute;
+    top :20%;
+    text-align: center;
 }
 
 .countdown {
@@ -53,30 +46,43 @@ body {
 
 .countdown div {
     margin: 10px;
- }
+}
 
 .countdown span{
+    display: block;
     color: hsl(237, 18%, 59%);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .countdown p {
-    padding: 20px;
+    padding: 20px 10px;
     background-color: hsl(236, 21%, 26%);
     border-radius: 5px;
     color: hsl(345, 95%, 68%);
-    font-size: 40px;
+    font-size: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    text-align: center;
 }
 
 .socials {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0px;
     z-index: 999;
+    height: 25%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/pattern-hills.svg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
 .socials ul {
@@ -88,13 +94,15 @@ body {
 }
 
 @media (max-width: 500px) {
-    .container {
-        max-width: auto;
-        padding: 0 20px;
+    .countdown  {
+      transform: scale(0.5);
+    }
+    h1{
+      transform: scale(0.5);
+      top: 50px;
+    }
+    .socials{
+        height: 120px;
     }
 
-    .container h1 {
-        text-align: center;
-    }
-    
 }

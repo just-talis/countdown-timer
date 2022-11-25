@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <CountdownTimer
-      countdownMs={'2023-03-11'}
+      countdownMs={'2022-12-10'}
       />
     </div>
   );
