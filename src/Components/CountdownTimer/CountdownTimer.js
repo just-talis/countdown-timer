@@ -31,22 +31,44 @@ const CountdownTimer = ({ countdownMs }) => {
     <h1>we're launching soon</h1>
 
       <div className="countdown">
-        <div>
-          <p id="days">{remainingTime.days}</p>
-          <span>Days</span>
-        </div>
-        <div>
-          <p id="hours">{remainingTime.hours}</p>
-          <span>Hours</span>
-        </div>
-        <div>
-          <p id="minutes">{remainingTime.minutes}</p>
-          <span>Minutes</span>
-        </div>
-        <div>
-          <p id="seconds">{remainingTime.seconds}</p>
-          <span>Seconds</span>
-        </div>
+        <section className="countdown_item">
+          <div className="countdown_box">
+            <span data-attribute={ remainingTime.days} className="top">
+            {Number(remainingTime.days) + 1}
+            </span>
+            <span data-attribute={remainingTime.days} className="bottom">
+            {Number(remainingTime.days) + 1}
+            </span>
+          </div>
+          <span className="countdown_label">Days</span>
+        </section>
+        <section className="countdown_item">
+            <div className="countdown_box">
+          <span data-attribute={remainingTime.hours} className="top">
+          </span>
+          <span data-attribute={remainingTime.hours} className="bottom">
+            </span>
+            </div>
+          <span className="countdown_label">Hours</span>
+        </section>
+        <section className="countdown_item">
+        <div className="countdown_box">
+          <span data-attribute={remainingTime.minutes} className="top">
+          </span>
+          <span data-attribute={remainingTime.minutes} className="bottom">
+            </span>
+          </div>
+          <span className="countdown_label">Minutes</span>
+        </section>
+        <section className="countdown_item">
+        <div className="countdown_box">
+          <span data-attribute={remainingTime.seconds} className="top">
+          </span>
+          <span data-attribute={remainingTime.seconds} className="bottom">
+            </span>
+          </div>
+          <span className="countdown_label">Seconds</span>
+        </section>
       </div>
 
       <div className="socials">

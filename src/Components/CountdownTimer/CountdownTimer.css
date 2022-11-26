@@ -44,11 +44,7 @@ h1 {
     text-align: center;
 }
 
-.countdown div {
-    margin: 10px;
-}
-
-.countdown span{
+.countdown_label{
     display: block;
     color: hsl(237, 18%, 59%);
     text-transform: uppercase;
@@ -57,8 +53,12 @@ h1 {
     margin-top: 20px;
 }
 
-.countdown p {
-    padding: 20px 10px;
+.countdown_item{
+    margin: 10px;
+}
+
+.countdown_item > div {
+    position: relative;
     background-color: hsl(236, 21%, 26%);
     border-radius: 5px;
     color: hsl(345, 95%, 68%);
@@ -67,8 +67,110 @@ h1 {
     flex-direction: column;
     justify-content: center;
     width: 150px;
+    height: 140px;
     text-align: center;
+    box-shadow: hsl(234, 17%, 12%) 0px 10px;
+    overflow: hidden;
 }
+
+.countdown_item > div::before , .countdown_item > div::after{
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 20px;
+    background-color: hsl(234, 17%, 12%);
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.countdown_item > div::before{
+    left: -10px;
+}
+
+.countdown_item > div::after{
+    right: -10px;
+}
+.top,.top::after, .bottom,.bottom::after{
+    overflow: hidden;
+    height: 70px;
+}
+
+.top{
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: 20px;
+    border-bottom: solid 1px hsl(234, 17%, 12%);
+    z-index: 3;
+    backface-visibility: hidden;
+}
+
+.bottom{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 13px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.top::after{
+    position: absolute;
+    content: attr(data-attribute) ' ';
+    top: 0px;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    animation-name: flip-top;
+    animation-duration: 2000ms;
+    transform-origin: bottom;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    box-sizing: border-box;
+}
+.bottom::after{
+    position: absolute;
+    content: attr(data-attribute) ' ';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 13px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transform: rotateX(90deg);
+    animation-name: flip-bottom;
+    animation-duration: 2000ms;
+    animation-delay: 2000ms;
+    transform-origin: top;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+/*animations*/
+
+@keyframes flip-top {
+0%{
+    background-color: hsl(236, 21%, 26%);
+}
+  100% {
+    transform: rotateX(90deg);
+ }
+}
+
+@keyframes flip-bottom {
+    0%{
+        background-color: hsl(236, 21%, 26%);
+    }
+      100% {
+        transform: rotateX(0deg);
+     } 
+}
+
+
 
 .socials {
     position: absolute;
